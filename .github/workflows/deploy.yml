@@ -1,0 +1,29 @@
+name: Deploy Site
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up SSH
+              run: |
+                  mkdir -p ~/.ssh
+
+                  echo "${{ secrets.SERVER_KEY }}" > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+
+                  ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+
+            - name: Deploy Site
+              run: |
+                  local_dir="./"
+                  remote_dir="site/"
+                  rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa" "$local_dir/" ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:"$remote_dir"
