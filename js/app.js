@@ -1,7 +1,7 @@
 let currentProduct = null;
 
 // Відкриття модального вікна
-function buy(button) {
+function purchased(button) {
     currentProduct = button.closest('.catalog-product');
 
     // Перевірка статусу
@@ -19,7 +19,8 @@ function closeModal() {
 }
 
 // Підтвердження покупки
-function confirmBuy() {
+function confirmPurchased() {
+    const productId = document.getElementById('product-id').value;
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const address = document.getElementById('address').value;

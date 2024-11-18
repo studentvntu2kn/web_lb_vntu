@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог11 ааіграшок | VNTU-Toy</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Підключення CSS -->
+    <title>Каталог іграшок | VNTU-Toy</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Підключення CSS -->
 </head>
 <body>
     <header>
@@ -17,7 +17,6 @@
         </nav>
     </header>
     <div id="catalog-container">
-
         <div id="catalog-main">
             <main>
 
@@ -25,10 +24,10 @@
                 <h2>М'які іграшки</h2>
                 <div class="catalog-category">
                     <div class="catalog-product">
-                        <img src="img/toy4.jpeg" alt="М'який ведмедик">
+                        <img src="../img/toy4.jpeg" alt="М'який ведмедик">
                         <h3>М'який ведмедик</h3>
                         <p>Опис: М'яка іграшка, яка стане найкращим другом для вашої дитини.</p>
-                        <button type="button" onclick="buy(this)">Ціна: 200 грн</button>
+                        <button type="button" onclick="purchased(this)">Ціна: 200 грн</button>
                     </div>
                 </div>
 
@@ -36,10 +35,10 @@
                 <h2>Конструктори</h2>
                 <div class="catalog-category">
                     <div class="catalog-product">
-                        <img src="img/toy3.jpg" alt="Конструктор LEGO">
+                        <img src="../img/toy3.jpg" alt="Конструктор LEGO">
                         <h3>Конструктор LEGO</h3>
                         <p>Опис: Конструктор для розвитку логіки та творчих здібностей дитини.</p>
-                        <button type="button" onclick="buy(this)">Ціна: 250 грн</button>
+                        <button type="button" onclick="purchased(this)">Ціна: 250 грн</button>
                     </div>
                 </div>
 
@@ -47,16 +46,16 @@
                 <h2>Ляльки</h2>
                 <div class="catalog-category">
                     <div class="catalog-product">
-                        <img src="img/toy1.jpeg" alt="Робот Трансформер">
+                        <img src="../img/toy1.jpeg" alt="Робот Трансформер">
                         <h3>Робот Трансформер</h3>
                         <p>Опис: Крутий робот, який може трансформуватися у машину. Підходить для дітей від 5 років.</p>
-                        <button type="button" onclick="buy(this)">Ціна: 5000 грн</button>
+                        <button type="button" onclick="purchased(this)">Ціна: 5000 грн</button>
                     </div>
                     <div class="catalog-product">
-                        <img src="img/toy2.jpeg" alt="Лялька Барбі">
+                        <img src="../img/toy2.jpeg" alt="Лялька Барбі">
                         <h3>Лялька Барбі</h3>
                         <p>Опис: Стильна лялька з аксесуарами, що стане улюбленою іграшкою для будь-якої дівчинки.</p>
-                        <button type="button" onclick="buy(this)">Ціна: 350 грн</button>
+                        <button type="button" onclick="purchased(this)">Ціна: 350 грн</button>
                     </div>
                 </div>
 
@@ -78,13 +77,12 @@
                 <label for="address">Адреса доставки:</label>
                 <textarea id="address" required></textarea>
 
-                <button type="button" onclick="confirmBuy()">Підтвердити покупку</button>
+                <button type="button" onclick="confirmPurchased()">Підтвердити покупку</button>
             </form>
         </div>
     </div>
 
-
-    <script src="js/app.js"></script>
+    <script src="../js/app.js"></script>
 
     <footer>
         &copy; 2024 VNTU-Toy. Всі права захищені.
