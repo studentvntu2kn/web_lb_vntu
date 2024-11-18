@@ -1,42 +1,30 @@
 let currentProduct = null;
 
-// Відкриття модального вікна
 function buy(button) {
+    // Знаходимо найближчий батьківський елемент з класом .catalog-product
     currentProduct = button.closest('.catalog-product');
 
-    // Перевірка статусу
+    // Перевіряємо, чи продукт вже позначений як "куплений"
     if (currentProduct.classList.contains('purchased')) {
+        // Якщо продукт куплений, видаляємо клас "purchased"
         currentProduct.classList.remove('purchased');
+        // Відновлюємо оригінальний текст кнопки з атрибута data-original-text
         button.textContent = button.getAttribute('data-original-text');
     } else {
-        document.getElementById('purchase-modal').style.display = 'flex';
-    }
-}
-
-// Закриття модального вікна
-function closeModal() {
-    document.getElementById('purchase-modal').style.display = 'none';
-}
-
-// Підтвердження покупки
-function confirmBuy() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const address = document.getElementById('address').value;
-
-    if (name && email && address) {
+        // Якщо продукт не куплений, додаємо клас "purchased"
         currentProduct.classList.add('purchased');
+        // Змінюємо текст кнопки на "Відмінити"
         currentProduct.querySelector('button').textContent = "Відмінити";
-        closeModal();
-    } else {
-        alert("Будь ласка, заповніть всі поля.");
     }
 }
 
-// Ініціалізація початкового тексту при завантаженні сторінки
+// Додаємо обробник події завантаження сторінки
 window.addEventListener('DOMContentLoaded', () => {
+    // Знаходимо всі кнопки в елементах з класом .catalog-product
     document.querySelectorAll('.catalog-product button').forEach(button => {
+        // Перевіряємо, чи кнопка має атрибут data-original-text
         if (!button.hasAttribute('data-original-text')) {
+            // Зберігаємо оригінальний текст кнопки в атрибут data-original-text
             button.setAttribute('data-original-text', button.textContent);
         }
     });
