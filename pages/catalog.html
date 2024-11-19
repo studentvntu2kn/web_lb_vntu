@@ -10,7 +10,7 @@
     <header>
         <h1>VNTU-Toy</h1>
         <nav>
-            <a class="nav-link" href="index.html">На головну</a>
+            <a class="nav-link" href="../index.html">На головну</a>
             <a class="nav-link" href="catalog.html">Каталог товарів</a>
             <a class="nav-link" href="about.html">Про нас</a>
             <a class="nav-link" href="delivery.html">Умови доставки</a>
@@ -23,39 +23,39 @@
                 <!-- М'які іграшки -->
                 <h2>М'які іграшки</h2>
                 <div class="catalog-category">
-                    <div class="catalog-product">
+                    <div class="catalog-product" data-product-id="1" data-product-name="М'який ведмедик" data-product-price="200">
                         <img src="../img/toy4.jpeg" alt="М'який ведмедик">
                         <h3>М'який ведмедик</h3>
                         <p>Опис: М'яка іграшка, яка стане найкращим другом для вашої дитини.</p>
-                        <button type="button" onclick="purchased(this)">Ціна: 200 грн</button>
+                        <button type="button" onclick="purchase(this)">Ціна: 200 грн</button>
                     </div>
                 </div>
 
                 <!-- Конструктори -->
                 <h2>Конструктори</h2>
                 <div class="catalog-category">
-                    <div class="catalog-product">
+                    <div class="catalog-product" data-product-id="100" data-product-name="Конструктор LEGO" data-product-price="250">
                         <img src="../img/toy3.jpg" alt="Конструктор LEGO">
                         <h3>Конструктор LEGO</h3>
                         <p>Опис: Конструктор для розвитку логіки та творчих здібностей дитини.</p>
-                        <button type="button" onclick="purchased(this)">Ціна: 250 грн</button>
+                        <button type="button" onclick="purchase(this)">Ціна: 250 грн</button>
                     </div>
                 </div>
 
                 <!-- Ляльки -->
                 <h2>Ляльки</h2>
                 <div class="catalog-category">
-                    <div class="catalog-product">
+                    <div class="catalog-product" data-product-id="200" data-product-name="Робот трансформер" data-product-price="5000">
                         <img src="../img/toy1.jpeg" alt="Робот Трансформер">
                         <h3>Робот Трансформер</h3>
                         <p>Опис: Крутий робот, який може трансформуватися у машину. Підходить для дітей від 5 років.</p>
-                        <button type="button" onclick="purchased(this)">Ціна: 5000 грн</button>
+                        <button type="button" onclick="purchase(this)">Ціна: 5000 грн</button>
                     </div>
-                    <div class="catalog-product">
+                    <div class="catalog-product" data-product-id="201" data-product-name="Лялька барбі" data-product-price="350">
                         <img src="../img/toy2.jpeg" alt="Лялька Барбі">
                         <h3>Лялька Барбі</h3>
                         <p>Опис: Стильна лялька з аксесуарами, що стане улюбленою іграшкою для будь-якої дівчинки.</p>
-                        <button type="button" onclick="purchased(this)">Ціна: 350 грн</button>
+                        <button type="button" onclick="purchase(this)">Ціна: 350 грн</button>
                     </div>
                 </div>
 
@@ -77,7 +77,7 @@
                 <label for="address">Адреса доставки:</label>
                 <textarea id="address" required></textarea>
 
-                <button type="button" onclick="confirmPurchased()">Підтвердити покупку</button>
+                <button type="button" onclick="confirmPurchase()">Підтвердити покупку</button>
             </form>
         </div>
     </div>
