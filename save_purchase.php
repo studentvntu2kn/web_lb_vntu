@@ -17,8 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     $jsonData = json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-    $filename = "purchases/" . date("Y-m-d_H:m") . "_purchase.json";
+    $filename = "purchases/" . date("Y-m-d_H:m:s") . "_purchase.json";
 
     file_put_contents($filename, $jsonData);
+    exit();
 }
 ?>
