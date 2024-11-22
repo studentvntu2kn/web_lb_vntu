@@ -25,16 +25,18 @@ function confirmPurchase() {
     const address = document.getElementById('address').value;
 
     if (name && email && address) {
-        // Відправка даних на сервер через AJAX
-        fetch('../save_purchase.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: `product_id=${encodeURIComponent(product_id)}&product_name=${encodeURIComponent(product_name)}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&address=${encodeURIComponent(address)}`
-        })
-            .then(response => {
-                if (response.ok) {
+        // Формування даних для відправки
+        const data = `product_id=${encodeURIComponent(product_id)}&product_name=${encodeURIComponent(product_name)}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&address=${encodeURIComponent(address)}`;
+
+        // Створення нового XMLHttpRequest
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '../save_purchase.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        // Обробка відповіді
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
                     console.log("Дані успішно збережено!");
                     currentProduct.classList.add('purchased');
                     currentProduct.querySelector('button').textContent = "Товар куплено!";
@@ -42,14 +44,16 @@ function confirmPurchase() {
                 } else {
                     console.error("Помилка при збереженні даних.");
                 }
-            })
-            .catch(error => {
-                console.error("Помилка мережі:", error);
-            });
+            }
+        };
+
+        // Відправка даних
+        xhr.send(data);
     } else {
         alert("Будь ласка, заповніть всі поля.");
     }
 }
+
 
 
 // функції відкриття та закриття вікна
