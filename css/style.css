@@ -296,31 +296,3 @@ main {
     text-align: center;
     color: #333;
 }
-
-.joke-box {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 1rem;
-    background-color: #edf1f4;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-
-.joke-button {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #2980B9;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.joke-button:hover {
-    background-color: #3498DB;
-}
